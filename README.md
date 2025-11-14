@@ -1,38 +1,17 @@
-# todo-app
+# Frontend Mentor - Todo app
 
-This template should help get you started developing with Vue 3 in Vite.
+![Design preview for the Todo app coding challenge](preview.jpg)
 
-## Recommended IDE Setup
+## Welcome! 👋
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Thanks for checking out this front-end coding challenge.
 
-## Recommended Browser Setup
+[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Got feedback for us?
 
-## Customize configuration
+We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi@frontendmentor.io.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+This challenge is completely free. Please share it with anyone who will find it useful for practice.
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+**Have fun building!** 🚀

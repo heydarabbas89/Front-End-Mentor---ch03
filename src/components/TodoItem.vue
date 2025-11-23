@@ -15,12 +15,12 @@
 
 <template>
 	<li
-		class="w-full bg-white dark:bg-gray-800 first:rounded-t-lg flex items-center mb-px cursor-pointer"
+		class="group w-full bg-white dark:bg-gray-800 first:rounded-t-lg flex items-center mb-px cursor-pointer"
 	>
 		<!-- Item title -->
 		<div
 			@click="done = !done"
-			class="w-full flex items-center text-xs xl:text-sm overflow-hidden p-4 peer"
+			class="w-full p-4 flex items-center text-xs xl:text-sm overflow-hidden"
 			:class="{ 'line-through text-gray-300 dark:text-gray-600': done }"
 		>
 			<!-- Item status -->
@@ -42,14 +42,16 @@
 				</div>
 			</div>
 			<!-- /Item status -->
-			{{ title }}
+			<div class="w-full">
+				{{ title }}
+			</div>
 		</div>
 		<!-- /Item title -->
 
 		<!-- Delete item -->
 		<div
 			@click.stop="deleteItem()"
-			class="xl:invisible p-4 peer-hover:visible hover:visible"
+			class="p-4 xl:invisible group-hover:visible"
 		>
 			<img
 				src="@/assets/images/icon-cross.svg"

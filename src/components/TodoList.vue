@@ -1,20 +1,17 @@
 <script setup>
-	import { ref } from "vue";
 	import StatusBar from "./StatusBar.vue";
 	import TodoItem from "./TodoItem.vue";
+	import { computed } from "vue";
+	import { useItemStore } from "@/stores/item";
 
-	const done = ref(false);
+	const itemStore = useItemStore();
+	const items = computed(() => itemStore.items);
 </script>
 
 <template>
 	<div class="bg-gray-300 shadow-2xl dark:bg-slate-600 rounded-lg">
-		<ul class="text-gray-800 dark:text-gray-300 mb-px">
-			<TodoItem :done="done" title="Complete online javascript cource" />
-			<TodoItem :done="done" title="Jog around the park 3x" />
-			<TodoItem :done="done" title="10 menutes meditation" />
-			<TodoItem :done="done" title="Read for 1 hour" />
-			<TodoItem :done="done" title="Pick up groceries" />
-			<TodoItem :done="done" title="Complete Todo Apps on Frontend Mentor" />
+		<ul class="min-h-12 text-gray-800 dark:text-gray-300 mb-px rounded-t-lg">
+			<TodoItem v-for="(item, index) in items" :key="index" :item="item" />
 		</ul>
 		<!-- Status bar -->
 		<StatusBar />

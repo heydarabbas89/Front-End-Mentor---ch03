@@ -2,11 +2,10 @@
 	import { ref } from "vue";
 
 	const props = defineProps({
-		title: String,
-		done: Boolean,
+		item: Object,
 	});
 
-	const done = ref(props.done);
+	const done = ref(props.item.done);
 
 	function deleteItem() {
 		console.log("deleteItem");
@@ -43,7 +42,7 @@
 			</div>
 			<!-- /Item status -->
 			<div class="w-full">
-				{{ title }}
+				{{ item.title }}
 			</div>
 		</div>
 		<!-- /Item title -->

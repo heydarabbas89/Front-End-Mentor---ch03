@@ -6,9 +6,7 @@
 	const title = ref("");
 
 	function addItem() {
-		const trimmedTitle = title.value.trim();
-		if (!trimmedTitle) return; // avoid empty todos
-		itemStore.addNewItem({ title: trimmedTitle, done: false });
+		itemStore.addNewItem({ title: title.value, done: false });
 		title.value = "";
 	}
 </script>

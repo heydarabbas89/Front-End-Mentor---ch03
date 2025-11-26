@@ -11,7 +11,12 @@
 <template>
 	<div class="bg-gray-300 shadow-2xl dark:bg-slate-600 rounded-lg">
 		<ul class="min-h-12 text-gray-800 dark:text-gray-300 mb-px rounded-t-lg">
-			<TodoItem v-for="(item, index) in items" :key="index" :item="item" />
+			<TodoItem
+				v-for="(item, index) in items"
+				:key="index"
+				:item="item"
+				:itemId="index"
+			/>
 		</ul>
 		<!-- Status bar -->
 		<StatusBar />

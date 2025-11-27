@@ -1,8 +1,17 @@
 import { defineStore } from "pinia";
 import { useLocalStorage } from "@vueuse/core";
+import { computed, ref } from "vue";
 
 export const useItemStore = defineStore("item", () => {
-	const items = useLocalStorage("items", []);
+	const storedItems = useLocalStorage("items", []);
+	const filter = ref("all"); // "all" | "active" | "completed"
+	const items = computed(() => {
+		if (filter.value === "active")
+			return storedItems.value.filter((item) => item.done !== true);
+		if (filter.value === "completed")
+			return storedItems.value.filter((item) => item.done === true);
+		return storedItems.value;
+	});
 
 	function generateId() {
 		return `${Date.now()}-${Math.floor(Math.random() * 1e6)}`;
@@ -16,18 +25,45 @@ export const useItemStore = defineStore("item", () => {
 			title,
 			done: !!newItem.done,
 		};
-		items.value = [...items.value, item];
+		storedItems.value = [...storedItems.value, item];
 	}
 
 	function deleteItem(id) {
-		items.value = items.value.filter((item) => item.id !== id);
+		storedItems.value = storedItems.value.filter((item) => item.id !== id);
+	}
+
+	function clearCompletedItems() {
+		storedItems.value = storedItems.value.filter((item) => item.done !== true);
+	}
+
+	function displayAllItems() {
+		filter.value = "all";
+	}
+
+	function displayActiveItems() {
+		filter.value = "active";
+	}
+
+	function displayCompletedItems() {
+		filter.value = "completed";
 	}
 
 	function toggleDone(id) {
-		items.value = items.value.map((item) =>
+		storedItems.value = storedItems.value.map((item) =>
 			item.id === id ? { ...item, done: !item.done } : item
 		);
 	}
 
-	return { items, addNewItem, deleteItem, toggleDone };
+	return {
+		storedItems,
+		filter,
+		items,
+		addNewItem,
+		deleteItem,
+		toggleDone,
+		clearCompletedItems,
+		displayAllItems,
+		displayActiveItems,
+		displayCompletedItems,
+	};
 });

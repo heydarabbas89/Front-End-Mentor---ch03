@@ -20,7 +20,7 @@
 			<TodoItem v-for="(item, index) in items" :key="index" :item="item" />
 		</ul>
 		<!-- Status bar -->
-		<StatusBar />
+		<StatusBar :itemsLenght="items.length" />
 		<!-- /Status bar -->
 	</div>
 </template>

@@ -9,7 +9,7 @@
 	>
 		<!-- Title -->
 		<div
-			class="flex justify-between items-center px-4 py-10 md:py-8 md:px-0 md:w-lg mx-auto"
+			class="flex justify-between items-center px-4 py-10 md:py-8 md:px-0 sm:w-lg mx-auto"
 		>
 			<Logo />
 			<ThemeButton />

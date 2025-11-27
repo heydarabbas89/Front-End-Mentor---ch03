@@ -4,8 +4,6 @@
 </script>
 
 <template>
-	<div class="bg-gray-50 dark:bg-gray-900">
-		<AppHeader />
-		<TodoContent />
-	</div>
+	<AppHeader />
+	<TodoContent />
 </template>

@@ -7,7 +7,7 @@
 <template>
 	<!-- Todo content -->
 	<section
-		class="bg-transparent -translate-y-28 md:-translate-y-30 lg:-translate-y-34 xl:-translate-y-30 md:w-lg p-4 md:px-0 md:py-6 xl:py-0 mx-auto"
+		class="bg-transparent -translate-y-28 md:-translate-y-30 lg:-translate-y-34 xl:-translate-y-30 sm:w-lg p-4 sm:px-0 sm:py-6 xl:py-0 mx-auto"
 	>
 		<!-- Add todo -->
 		<AddTodoField />

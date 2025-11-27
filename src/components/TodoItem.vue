@@ -16,7 +16,7 @@
 
 <template>
 	<li
-		class="group w-full bg-white dark:bg-gray-800 first:rounded-t-lg flex items-center mb-px"
+		class="group w-full text-gray-600 dark:text-gray-300 bg-white dark:bg-gray-800 first:rounded-t-lg flex items-center mb-px"
 	>
 		<!-- Item title -->
 		<button
@@ -45,7 +45,7 @@
 			</div>
 			<!-- /Item status -->
 			<div
-				class="w-full text-xs xl:text-sm text-left overflow-hidden"
+				class="w-full max-w-54 sm:max-w-96 text-sm text-left overflow-hidden"
 				:class="{ 'line-through text-gray-300 dark:text-gray-600': item.done }"
 			>
 				{{ item.title }}
@@ -61,7 +61,7 @@
 		>
 			<img
 				src="@/assets/images/icon-cross.svg"
-				class="w-5 h-5"
+				class="w-4 h-4"
 				alt="Cross icon"
 			/>
 		</button>

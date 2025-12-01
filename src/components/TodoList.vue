@@ -1,11 +1,12 @@
 <script setup>
 	import StatusBar from "./StatusBar.vue";
 	import TodoItem from "./TodoItem.vue";
-	import { computed } from "vue";
+	import Draggable from "vuedraggable";
 	import { useItemStore } from "@/stores/item";
+	import { storeToRefs } from "pinia";
 
 	const itemStore = useItemStore();
-	const items = computed(() => itemStore.items);
+	const { items } = storeToRefs(itemStore);
 </script>
 
 <template>
@@ -16,9 +17,19 @@
 		>
 			Create a new todo...
 		</div>
-		<ul v-else class="min-h-12 mb-px rounded-t-lg">
-			<TodoItem v-for="(item, index) in items" :key="index" :item="item" />
-		</ul>
+		<Draggable
+			v-else
+			tag="ul"
+			v-model="items"
+			group="items"
+			item-key="id"
+			drag-class="drag"
+			class="min-h-12 mb-px rounded-t-lg"
+		>
+			<template #item="{ element }">
+				<TodoItem :item="element" />
+			</template>
+		</Draggable>
 		<!-- Status bar -->
 		<StatusBar :itemsLenght="items.length" />
 		<!-- /Status bar -->

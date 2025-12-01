@@ -5,12 +5,18 @@ import { computed, ref } from "vue";
 export const useItemStore = defineStore("item", () => {
 	const storedItems = useLocalStorage("items", []);
 	const filter = ref("all"); // "all" | "active" | "completed"
-	const items = computed(() => {
-		if (filter.value === "active")
-			return storedItems.value.filter((item) => item.done !== true);
-		if (filter.value === "completed")
-			return storedItems.value.filter((item) => item.done === true);
-		return storedItems.value;
+
+	const items = computed({
+		get() {
+			if (filter.value === "active")
+				return storedItems.value.filter((item) => item.done !== true);
+			if (filter.value === "completed")
+				return storedItems.value.filter((item) => item.done === true);
+			return storedItems.value;
+		},
+		set(newValue) {
+			storedItems.value = newValue;
+		},
 	});
 
 	function generateId() {

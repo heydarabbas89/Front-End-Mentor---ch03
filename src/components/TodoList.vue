@@ -17,7 +17,11 @@
 		>
 			Create a new todo...
 		</div>
-		<Draggable
+
+		<ul>
+			<TodoItem v-for="(item, index) in items" :key="index" :item="item" />
+		</ul>
+		<!-- <Draggable
 			v-else
 			tag="ul"
 			v-model="items"
@@ -29,7 +33,7 @@
 			<template #item="{ element }">
 				<TodoItem :item="element" />
 			</template>
-		</Draggable>
+		</Draggable> -->
 		<!-- Status bar -->
 		<StatusBar :itemsLenght="items.length" />
 		<!-- /Status bar -->

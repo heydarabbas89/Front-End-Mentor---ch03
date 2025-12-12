@@ -22,9 +22,9 @@
 		<!-- /Filter -->
 
 		<!-- Drag & Drop notes -->
-		<p class="text-center text-gray-400 dark:text-gray-600 py-3 my-8 xl:my-12">
+		<!-- <p class="text-center text-gray-400 dark:text-gray-600 py-3 my-8 xl:my-12">
 			Drag and drop to reorder list
-		</p>
+		</p> -->
 	</section>
 	<!-- /Todo content -->
 </template>
